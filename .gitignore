@@ -1,0 +1,9 @@
+# Terraform downloads providers here. Never commit it.
+.terraform/
+
+# State files hold every setting in plain text, secrets included. Never commit them.
+*.tfstate
+*.tfstate.*
+
+crash.log
+.DS_Store
