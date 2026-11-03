@@ -146,7 +146,39 @@ http://localhost:8080
 Paste the lines that show the image change, and the `Plan:` line.
 
 ```
+Terraform will perform the following actions:
 
+  # kubernetes_deployment_v1.hello will be updated in-place
+  ~ resource "kubernetes_deployment_v1" "hello" {
+        id               = "default/hello-app"
+        # (1 unchanged attribute hidden)
+
+      ~ spec {
+            # (5 unchanged attributes hidden)
+
+          ~ template {
+              ~ spec {
+                    # (18 unchanged attributes hidden)
+
+                  ~ container {
+                      ~ image                      = "shripada/hello-app:v1" -> "shripada/hello-app:v2"
+                        name                       = "hello-app"
+                        # (10 unchanged attributes hidden)
+
+                        # (2 unchanged blocks hidden)
+                    }
+                }
+
+                # (1 unchanged block hidden)
+            }
+
+            # (2 unchanged blocks hidden)
+        }
+
+        # (1 unchanged block hidden)
+    }
+
+Plan: 0 to add, 1 to change, 0 to destroy.
 ```
 
 ## Part 3: plan that found the drift after `kubectl scale`

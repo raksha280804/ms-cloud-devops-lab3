@@ -14,7 +14,7 @@ provider "kubernetes" {
 
 variable "image_tag" {
   type    = string
-  default = "v1"
+  default = "v2"
 }
 
 variable "replicas" {
